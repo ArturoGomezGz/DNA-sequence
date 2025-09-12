@@ -1,0 +1,8 @@
+# Archivos de configuración de Replit
+.replit
+
+# Binarios compilados
+main.exe
+
+# Caché de clangd/ccls
+.ccls-cache/
