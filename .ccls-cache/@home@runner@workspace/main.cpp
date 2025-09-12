@@ -29,21 +29,21 @@ int endingIndex = 0;
 
 // Build the DP table
 for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-                if (s1[i-1] == s2[j-1]) {
-                        dp[i][j] = dp[i-1][j-1] + 1;
-                        if (dp[i][j] > maxLength) {
-                                maxLength = dp[i][j];
-                                endingIndex = i;
-                        }
-                } else {
-                        dp[i][j] = 0;
-                }
+    for (int j = 1; j <= m; j++) {
+        if (s1[i-1] == s2[j-1]) {
+            dp[i][j] = dp[i-1][j-1] + 1;
+            if (dp[i][j] > maxLength) {
+                maxLength = dp[i][j];
+                endingIndex = i;
+            }
+        } else {
+            dp[i][j] = 0;
         }
+    }
 }
 
 if (maxLength == 0) {
-        return "";
+    return "";
 }
 return s1.substr(endingIndex - maxLength, maxLength);
 }
